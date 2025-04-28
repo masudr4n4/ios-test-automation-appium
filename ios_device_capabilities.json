@@ -1,0 +1,9 @@
+{
+  "platformName": "ios",
+  "platformVersion": "18.4",
+  "deviceName": "iPhone 16 Pro",
+  "automationName": "XCUITest",
+  "bundleId": "com.apple.reminders",
+  "fullReset": false,
+  "noReset": false
+}
