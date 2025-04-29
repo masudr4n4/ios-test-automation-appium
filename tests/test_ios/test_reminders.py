@@ -39,3 +39,20 @@ class TestReminderHomePage:
         homepage.click_list_options()
         homepage.delete_list()
         assert homepage.get_list_name(new_list_name) is None,"List item is not deleted"
+
+    @allure.title("Verify adding reminder to new list and delete")
+    @allure.step("Verify adding reminder to new list and delete")
+    @allure.description("Verify adding reminder to new list and delete")
+    @pytest.mark.regression
+    def test_add_reminder_to_lists(self):
+        reminder_to_add = 2
+        homepage = ReminderPage(self.driver)
+        new_list_name = homepage.add_new_list()
+        assert homepage.get_list_name(new_list_name) is not None
+        homepage.return_to_lists()
+        homepage.add_reminder_to_list(new_list_name,reminder_to_add)
+        homepage.open_new_list_item(new_list_name)
+        assert homepage.count_reminder() == reminder_to_add
+        homepage.click_list_options()
+        homepage.delete_list(confirm=True)
+        assert homepage.get_list_name(new_list_name) is None, "List item is not deleted"
