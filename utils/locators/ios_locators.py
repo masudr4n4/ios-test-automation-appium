@@ -10,6 +10,7 @@ class HomepageLocators:
     ADD_LIST_BTN = (By.XPATH,'//XCUIElementTypeButton[@name="Add List"]')
     LIST_NAME_INPUT = (By.XPATH,'//XCUIElementTypeTextField[@name="List Name"]')
     LIST_NAME = (By.XPATH,'//XCUIElementTypeStaticText[@name="{}"]')
+    DELETE_BTN = (By.XPATH,'//XCUIElementTypeStaticText[@name="Delete"]')
     DELETE_LIST = (By.XPATH,'//XCUIElementTypeButton[@name="Delete List"]')
     CONFIRM_DELETE = (By.XPATH,'//XCUIElementTypeButton[@name="Delete"]')
     ITEM_ON_HOMEPAGE = (By.XPATH,'//XCUIElementTypeStaticText[@name="{}"]')
@@ -17,6 +18,7 @@ class HomepageLocators:
     MORE_OPTION_BTN = (By.XPATH,'//XCUIElementTypeButton[@name="More"]')
     SHOW_LIST_INFO = (By.XPATH,'//XCUIElementTypeButton[@name="Show List Info"]')
     CANCEL_BTN = (By.XPATH,'//XCUIElementTypeButton[@name="Cancel"]')
+    REMOVE_LIST_ITEM = (By.XPATH,'//XCUIElementTypeButton[@name="Remove {}"]')
 
     SCHEDULED_BTN= (By.XPATH,'//XCUIElementTypeButton[@name="Scheduled, 0 reminders"]')
     TOMORROW_BTN = (By.XPATH,'//XCUIElementTypeOther[@name="Tomorrow" and @label="Tomorrow"]')

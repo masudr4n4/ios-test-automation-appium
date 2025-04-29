@@ -67,3 +67,14 @@ class ReminderPage(PageFactory):
         )
         return len(self.driver.find_elements(*self.home_locator.REMINDER_TITLE_INPUT))
 
+    def delete_new_list_from_home(self,new_list_name):
+        self.driver.find_element(*self.home_locator.EDIT_BTN).click()
+        WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, self.home_locator.REMOVE_LIST_ITEM[1].format(new_list_name)))
+        ).click()
+        delete_btn = self.driver.find_element(*self.home_locator.DELETE_BTN)
+
+        self.driver.execute_script("mobile: tap", {"x": delete_btn.location['x'] + 50, "y": delete_btn.location['y'] + 50})
+        self.driver.find_element(*self.home_locator.DONE_BTN).click()
+
+

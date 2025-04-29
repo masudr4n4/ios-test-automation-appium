@@ -56,3 +56,16 @@ class TestReminderHomePage:
         homepage.click_list_options()
         homepage.delete_list(confirm=True)
         assert homepage.get_list_name(new_list_name) is None, "List item is not deleted"
+
+    @allure.title("Verify Delete working as expected from home page")
+    @allure.step("Test Add new list to reminders page")
+    @allure.description("Adding new list to the reminders list")
+    @pytest.mark.regression
+    def test_delete_list_from_home(self):
+        homepage = ReminderPage(self.driver)
+        new_list_name = homepage.add_new_list()
+        assert homepage.get_list_name(new_list_name) is not None
+        homepage.return_to_lists()
+        homepage.delete_new_list_from_home(new_list_name)
+        assert homepage.get_list_name(new_list_name) is None, "List item is not deleted"
+
